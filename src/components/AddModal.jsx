@@ -15,19 +15,19 @@ function AddModal({ show, handleClose }) {
         </Modal.Header>
         <Modal.Body>
           <>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId="name">
               <Form.Label>Patient Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter name" disabled />
+              <Form.Control type="text" placeholder="Enter name" enabled />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId="date">
               <Form.Label>Date</Form.Label>
               <Form.Control type="date" placeholder="Date" />
             </Form.Group>
-           <div>
-           <Button variant="primary" type="submit">
-              Submit
+           <div className="text-center">
+           <Button variant="success" type="submit" className="me-2" onClick={handleClose}>
+              Save
             </Button>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="danger" onClick={handleClose}>
               Close
             </Button>
            </div>
