@@ -1,7 +1,8 @@
 import Container from "react-bootstrap/Container"
-import { doctorData } from "../helper/data"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import {doctorData} from "../helper/data"
+import Row from  "react-bootstrap/Row"
+import Col from  "react-bootstrap/Col"
+import AddModal from "./AddModal"
 const Doctors = () => {
   console.log(doctorData)
   return (
@@ -11,16 +12,24 @@ const Doctors = () => {
       </h3>
 
       <Row>
-      {doctorData.map(({id,img,dep,name}) => (
-         <Col xs={6} sm={4} md={3} >
-         <img src={img}  alt={name} className="img-thumbnail doctor-img"/>
-         <h5>{name}</h5>
-         <h6>{dep}</h6>
-         </Col>
+        {doctorData.map(({id,img,dep,name}) => (
+          <Col xs={6} sm={4} md={3} >
+            <img src={img} alt={name} className="img-thumbnail doctor-img" />
+            <h5>{name}</h5>
+            <h6>{dep}</h6>
 
-      ))}
-       
+
+          </Col>
+        ))}
+          
+
+          <AddModal/>
+
+
       </Row>
+
+
+    
 
      
     </Container>
