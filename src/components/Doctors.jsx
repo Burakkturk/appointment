@@ -19,7 +19,7 @@ const Doctors = () => {
         Our Doctors
       </h3>
 
-      <Row>
+      <Row className="justify-content-center">
         {doctorData.map(({ id, img, dep, name }) => (
           <Col xs={6} sm={4} md={3}>
             <img
