@@ -1,10 +1,8 @@
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-function AddModal({show,handleClose}) {
-
-
+function AddModal({ show, handleClose }) {
   return (
     <>
       {/* <Button variant="primary" onClick={handleShow}>
@@ -16,30 +14,26 @@ function AddModal({show,handleClose}) {
           <Modal.Title>Appointment for...</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <>
-      <Form.Group className="mb-3">
-        <Form.Label>Disabled input</Form.Label>
-        <Form.Control placeholder="Disabled input" disabled />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label>Disabled select menu</Form.Label>
-        <Form.Select disabled>
-          <option>Disabled select</option>
-        </Form.Select>
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Check type="checkbox" label="Can't check this" disabled />
-      </Form.Group>
-    </>
+          <>
+            <Form.Group className="mb-3">
+              <Form.Label>Patient Name</Form.Label>
+              <Form.Control type="text" placeholder="Enter name" disabled />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Date</Form.Label>
+              <Form.Control type="date" placeholder="Date" />
+            </Form.Group>
+           <div>
+           <Button variant="primary" type="submit">
+              Submit
+            </Button>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+           </div>
+          </>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        
       </Modal>
     </>
   );
