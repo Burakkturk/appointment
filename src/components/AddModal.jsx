@@ -1,8 +1,14 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useState } from "react";
 
 function AddModal({ show, handleClose }) {
+  const [name, setName] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().slice(0,10));
+
+  console.log(name)
+  console.log(date)
   return (
     <>
       {/* <Button variant="primary" onClick={handleShow}>
@@ -17,23 +23,38 @@ function AddModal({ show, handleClose }) {
           <>
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Patient Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter name" enabled />
+              <Form.Control
+                type="text"
+                placeholder="Enter name"
+                enabled
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="date">
               <Form.Label>Date</Form.Label>
-              <Form.Control type="date" placeholder="Date" />
+              <Form.Control
+                type="date"
+                placeholder="Date"
+                onChange={(e) => setDate(e.target.value)}
+                value={date}
+              />
             </Form.Group>
-           <div className="text-center">
-           <Button variant="success" type="submit" className="me-2" onClick={handleClose}>
-              Save
-            </Button>
-            <Button variant="danger" onClick={handleClose}>
-              Close
-            </Button>
-           </div>
+            <div className="text-center">
+              <Button
+                variant="success"
+                type="submit"
+                className="me-2"
+                onClick={handleClose}
+              >
+                Save
+              </Button>
+              <Button variant="danger" onClick={handleClose}>
+                Close
+              </Button>
+            </div>
           </>
         </Modal.Body>
-        
       </Modal>
     </>
   );
